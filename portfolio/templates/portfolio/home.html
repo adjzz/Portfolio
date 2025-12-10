@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Name — Home</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{% url 'portfolio:home' %}">Home</a>
+      <a href="{% url 'portfolio:projects' %}">Projects</a>
+      <a href="{% url 'portfolio:contact' %}">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="profile-container">
+      <img src="{% static 'images/IMG_3064.jpg' %}" alt="profile" class="profile-img">
+      <h1>Your Name</h1>
+      <p class="bio">Short bio — I build futuristic web apps.</p>
+    </div>
+  </main>
+
+  <footer>
+    © {{ now|date:"Y" }} Your Name
+  </footer>
+</body>
+</html>

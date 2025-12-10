@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ralf Adjay F. Estenor — Projects</title>
+  <link rel="stylesheet" href="{% static 'css/project.css' %}">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="{% url 'portfolio:home' %}">Home</a>
+      <a href="{% url 'portfolio:projects' %}">Projects</a>
+      <a href="{% url 'portfolio:contact' %}">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Projects</h1>
+
+    <div class="projects">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3>Water Billing System v3.0</h3>
+        <p> • Improve and enhanced existing web-based billing system used by the Ginatilan LGU Treasurer’s Office. Refine 
+            backend functionality and user interface using Django and Bootstrap.</p>
+        <p> • Development Roles: Backend Developer , UI Developer , Maintainer .</p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3>Game Web App</h3>
+        <p> • Worked as part of a team to develop an interactive (Deal or No Deal) web game using Django for the CTU Nite 
+            Game Show. Served as a Backend/UI developer in collaboratively building a Django-powered interactive game.</p>
+        <p> • Development Roles: Backend / UI Developer , Live Sound/Efx Control </p>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3>Real-Time Mobile-to-IoT Display</h3>
+        <p> • Develop a mobile application using Flutter , Firebase for Real – Time Database </p>
+        <p> • Development Roles: Constructed the physical IoT hardware and configured it for seamless integration with the 
+            real-time system.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © {{ now|date:"Y" }} Your Name
+  </footer>
+</body>
+</html>

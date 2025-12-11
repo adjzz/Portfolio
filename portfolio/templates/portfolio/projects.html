@@ -7,50 +7,95 @@
   <title>Ralf Adjay F. Estenor — Projects</title>
   <link rel="stylesheet" href="{% static 'css/project.css' %}">
 </head>
+
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav>
-      <a href="{% url 'portfolio:home' %}">Home</a>
-      <a href="{% url 'portfolio:projects' %}">Projects</a>
-      <a href="{% url 'portfolio:contact' %}">Contact</a>
-    </nav>
-  </header>
 
-  <!-- Main Content -->
-  <main>
-    <h1>Projects</h1>
+<!-- Navigation -->
+<header>
+  <nav>
+    <a href="{% url 'portfolio:home' %}">Home</a>
+    <a href="{% url 'portfolio:projects' %}" class="active">Projects</a>
+    <a href="{% url 'portfolio:contact' %}">Contact</a>
+  </nav>
+</header>
 
-    <div class="projects">
-      <!-- Project 1 -->
-      <div class="project-card">
+<!-- Main Content -->
+<main>
+  <h1>My Projects</h1>
+
+  <div class="projects-list">
+
+    <!-- ------------ PROJECT 1 ------------ -->
+    <div class="project-item">
+      <div class="project-header">
         <h3>Water Billing System v3.0</h3>
-        <p> • Improve and enhanced existing web-based billing system used by the Ginatilan LGU Treasurer’s Office. Refine 
-            backend functionality and user interface using Django and Bootstrap.</p>
-        <p> • Development Roles: Backend Developer , UI Developer , Maintainer .</p>
+        <span class="toggle-btn">+</span>
       </div>
 
-      <!-- Project 2 -->
-      <div class="project-card">
-        <h3>Game Web App</h3>
-        <p> • Worked as part of a team to develop an interactive (Deal or No Deal) web game using Django for the CTU Nite 
-            Game Show. Served as a Backend/UI developer in collaboratively building a Django-powered interactive game.</p>
-        <p> • Development Roles: Backend / UI Developer , Live Sound/Efx Control </p>
-      </div>
+      <div class="project-content">
+        <p>• Improved and enhanced existing web-based billing system used by the Ginatilan LGU Treasurer’s Office.</p>
+        <p>• Refined backend logic and UI using Django & Bootstrap.</p>
+        <p><strong>Roles:</strong> Backend Developer, UI Developer, Maintainer</p>
 
-      <!-- Project 3 -->
-      <div class="project-card">
-        <h3>Real-Time Mobile-to-IoT Display</h3>
-        <p> • Develop a mobile application using Flutter , Firebase for Real – Time Database </p>
-        <p> • Development Roles: Constructed the physical IoT hardware and configured it for seamless integration with the 
-            real-time system.</p>
+        <img src="{% static 'images/water-billing.JPEG' %}" alt="Water Billing System">
       </div>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    © {{ now|date:"Y" }} Your Name
-  </footer>
+    <!-- ------------ PROJECT 2 ------------ -->
+    <div class="project-item">
+      <div class="project-header">
+        <h3>Game Web App</h3>
+        <span class="toggle-btn">+</span>
+      </div>
+
+      <div class="project-content">
+        <p>• Collaborated to build an interactive Deal or No Deal web game for CTU Nite Game Show.</p>
+        <p><strong>Roles:</strong> Backend/UI Developer, Live Sound & Effects Controller</p>
+
+        <img src="{% static 'images/game-web-app.jpg' %}" alt="Game Web App">
+      </div>
+    </div>
+
+    <!-- ------------ PROJECT 3 ------------ -->
+    <div class="project-item">
+      <div class="project-header">
+        <h3>Real-Time Mobile-to-IoT Display</h3>
+        <span class="toggle-btn">+</span>
+      </div>
+
+      <div class="project-content">
+        <p>• Built a real-time mobile app using Flutter with Firebase Realtime Database.</p>
+        <p>• Constructed and configured IoT hardware for seamless live updates.</p>
+
+        <img src="{% static 'images/real-time-iot.JPEG' %}" alt="IoT Project">
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  © {{ now|date:"Y" }} Ralf Adjay's Portfolio
+</footer>
+
+<!-- ========== JS ========== -->
+<script>
+  const items = document.querySelectorAll('.project-item');
+
+  items.forEach(item => {
+    const header = item.querySelector('.project-header');
+    const content = item.querySelector('.project-content');
+    const btn = item.querySelector('.toggle-btn');
+
+    header.addEventListener('click', () => {
+      content.classList.toggle('open');
+
+      // Change + to –
+      btn.textContent = content.classList.contains('open') ? "−" : "+";
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -1,0 +1,100 @@
+/* --------------------------
+   Rabbits Jump Animation
+--------------------------- */
+.rabbit {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
+}
+
+/* Body */
+.rabbit .body {
+  width: 50px;
+  height: 35px;
+  background: white;
+  border-radius: 25px;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Ears */
+.rabbit .ear {
+  width: 12px;
+  height: 25px;
+  background: white;
+  position: absolute;
+  top: -20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.rabbit .ear.left { left: 8px; transform: rotate(-15deg); }
+.rabbit .ear.right { right: 8px; transform: rotate(15deg); }
+
+/* Legs */
+.rabbit .leg {
+  width: 10px;
+  height: 18px;
+  background: white;
+  position: absolute;
+  bottom: -5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.rabbit .leg.left { left: 8px; transform: rotate(-10deg); }
+.rabbit .leg.right { right: 8px; transform: rotate(10deg); }
+
+/* Face */
+.rabbit .eye {
+  width: 6px;
+  height: 6px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+}
+.rabbit .eye.left { left: 12px; }
+.rabbit .eye.right { right: 12px; }
+
+.rabbit .nose {
+  width: 5px;
+  height: 3px;
+  background: pink;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.rabbit .whisker {
+  width: 12px;
+  height: 1px;
+  background: black;
+  position: absolute;
+  top: 22px;
+}
+.rabbit .whisker.left { left: 5px; transform: rotate(-10deg); }
+.rabbit .whisker.right { right: 5px; transform: rotate(10deg); }
+
+/* Animations - faster and near profile image */
+.rabbit1 { animation: jump1 5s ease-in-out infinite; }
+.rabbit2 { animation: jump2 6s ease-in-out infinite; }
+
+@keyframes jump1 {
+  0%   { left: -60px; bottom: 50px; }
+  20%  { left: 20%; bottom: 150px; }
+  40%  { left: 40%; bottom: 60px; }
+  60%  { left: 60%; bottom: 130px; }
+  80%  { left: 80%; bottom: 50px; }
+  100% { left: 110%; bottom: 50px; }
+}
+
+@keyframes jump2 {
+  0%   { left: -80px; bottom: 60px; }
+  15%  { left: 10%; bottom: 130px; }
+  35%  { left: 35%; bottom: 50px; }
+  55%  { left: 55%; bottom: 150px; }
+  75%  { left: 75%; bottom: 70px; }
+  100% { left: 120%; bottom: 60px; }
+}

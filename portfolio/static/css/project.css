@@ -1,4 +1,7 @@
 /* Reset */
+main {
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +11,13 @@
 /* Body styling */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  background: linear-gradient(135deg, #6678c6 0%, #b0ea04 100%);
+  background: linear-gradient(135deg, #6ae67f 0%, #0b6ab8 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Animated background particles */
@@ -69,7 +73,7 @@ nav a {
 }
 
 nav a.active {
-  background: rgba(255,255,255,0.3);
+  background: rgba(0, 49, 156, 0.568);
   font-weight: 600;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
